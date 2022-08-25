@@ -1,0 +1,20 @@
+{
+  "name": "knex-apollo-server-example",
+  "version": "0.1.0",
+  "private": true,
+  "packageManager": "yarn@3.2.3",
+  "workspaces": {
+    "packages": [
+      "packages/**"
+    ]
+  },
+  "scripts": {
+    "server": "yarn workspace @knex-apollo-server-example/server"
+  },
+  "devDependencies": {
+    "prettier": "^2.7.1"
+  },
+  "engines": {
+    "node": ">=16.15.1"
+  }
+}
