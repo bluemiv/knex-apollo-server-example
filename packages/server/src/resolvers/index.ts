@@ -1,8 +1,11 @@
-import userResolver from './user';
+import { userQueryResolver, userMutationResolver } from './user';
 
 const resolver = {
   Query: {
-    ...userResolver,
+    ...userQueryResolver,
+  },
+  Mutation: {
+    ...userMutationResolver,
   },
 };
 

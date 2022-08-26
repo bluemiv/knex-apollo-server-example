@@ -2,8 +2,7 @@ import type { Knex } from 'knex';
 import dotenv from 'dotenv';
 
 dotenv.config({ path: '.env' });
-const { POSTGRES_HOST, POSTGRES_DB, POSTGRES_PORT, POSTGRES_USER, POSTGRES_PASSWORD } = process.env;
-console.log(POSTGRES_HOST, POSTGRES_DB, POSTGRES_PORT, POSTGRES_USER, POSTGRES_PASSWORD);
+const { NODE_ENV, POSTGRES_HOST, POSTGRES_DB, POSTGRES_PORT, POSTGRES_USER, POSTGRES_PASSWORD } = process.env;
 
 const knexConfig: { [key: string]: Knex.Config } = {
   development: {
@@ -21,4 +20,4 @@ const knexConfig: { [key: string]: Knex.Config } = {
   },
 };
 
-export default knexConfig;
+export default knexConfig[NODE_ENV?.toLowerCase() || 'development'];
